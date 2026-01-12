@@ -4,14 +4,8 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  scroll-snap-type: y mandatory;
-}
-
 .section {
-  height: 100vh;
   width: 100vw;
-  scroll-snap-align: start;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -52,5 +46,15 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+.hero-section {
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
   }
 }

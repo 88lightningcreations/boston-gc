@@ -15,9 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ paddingTop: '56px' }}>
         <Header />
-        <main style={{ paddingTop: '80px' }}>
+        <main>
           {children}
         </main>
         <Footer />
