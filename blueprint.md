@@ -1,49 +1,32 @@
-# Blueprint: General Contracting Company Website
+# Project Blueprint
 
 ## Overview
 
-This document outlines the plan, design, and features of the General Contracting Company website. The goal is to create a bold, modern, and beautiful online presence that is both user-friendly and showcases the company's services.
+This project is a website for a general contracting company in Boston, MA. The website showcases the company's services, provides answers to frequently asked questions, and offers a clear call to action for potential customers. The design is modern, clean, and professional, with a focus on user experience and accessibility.
 
-## Current State: Implemented Features
+## Implemented Features and Design
 
-### Design and Style
+### General
+- **Responsive Design:** The website is fully responsive and works on all devices.
+- **Modern Aesthetics:** The design is modern and clean, with a focus on user experience.
+- **Accessibility:** The website is designed to be accessible to all users.
 
-*   **Frameworks:** Built with Next.js and styled with Bootstrap and custom CSS.
-*   **Color Palette:** Primarily uses a clean and professional combination of white, dark text, and a primary blue for interactive elements.
-*   **Typography:** Clean and readable sans-serif fonts are used throughout.
-*   **Layout:** The layout is responsive and uses a container-based structure for consistency.
+### Components
+- **Header:** A sticky header with a transparent background that becomes opaque on scroll. It includes the company logo and navigation links.
+- **Hero Section:** A full-screen hero section with the company logo and a clear call to action.
+- **Services Section:** A section showcasing the company's services with icons and brief descriptions.
+- **FAQ Section:** A frequently asked questions section with accordion-style answers.
+- **Carousel:** A carousel of images showcasing the company's work.
+- **Call to Action (CTA) Section:** A section with a clear call to action and a contact form.
+- **Footer:** A footer with the company's contact information and social media links.
 
-### Core Components
+### Styling
+- **Bootstrap:** The project uses Bootstrap for its grid system and base styling.
+- **Custom CSS:** Custom CSS is used for additional styling and to override Bootstrap's default styles.
+- **Color Palette:** The color palette is modern and professional, with a mix of dark and light colors.
+- **Typography:** The typography is clean and easy to read, with a mix of serif and sans-serif fonts.
 
-*   **Header (`Header.tsx`):** A sticky header that remains visible on scroll. It includes the company name, a non-collapsing navigation bar, and a contact phone number.
-*   **Footer (`Footer.tsx`):** A standard footer with navigation links and a copyright notice.
-*   **Hero (`Hero.tsx`):** A prominent hero section on the homepage featuring the company logo, a strong headline, a brief description, and a background image.
-*   **Services (`Services.tsx`):** A section on the homepage that displays a few of the company's main services in a card-based layout.
-*   **FAQ (`Faq.tsx`):** A section for frequently asked questions.
-*   **CTA (`Cta.tsx`):** A call-to-action section.
+## Current Plan
 
-### Pages & Routing
-
-*   **Home (`/`):** The main landing page, composed of the `Hero`, `Services`, `Faq`, and `Cta` components.
-*   **Blog (`/blog`):** A route for the blog (currently a placeholder).
-*   **Service Pages (`/services/...`):** Placeholder routes for individual service pages.
-
-## Next Steps: Blog Implementation
-
-The next phase of development will focus on building out the blog functionality.
-
-1.  **Create Blog Page:**
-    *   Create a new directory `app/blog`.
-    *   Add a `page.tsx` to display a list of blog posts.
-    *   The design will feature a grid of cards, each with a featured image, title, and a short excerpt.
-
-2.  **Create Single Post Page:**
-    *   Create a dynamic route `app/blog/[slug]/page.tsx`.
-    *   This page will display the full content of a single blog post.
-    *   It will include a prominent title, featured image, the main content, and author information.
-
-3.  **Dummy Data:**
-    *   Create a file with dummy data for blog posts to simulate fetching from a database or CMS.
-
-4.  **Styling:**
-    *   Apply a modern and visually appealing style to the blog list and single post pages, consistent with the overall site design.
+- **Fix Carousel Image Sizing:** The images in the carousel are zoomed in too far. The `object-fit` property will be changed from `cover` to `contain` to ensure the entire image is visible.
+- **Update Next/Image Component:** The `next/image` component will be updated to use the latest properties, including `fill`, `sizes`, and `style={{objectFit: "contain"}}`.
