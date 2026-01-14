@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 export const metadata = {
-  title: 'General Contracting Company | Boston, MA',
+  title: 'Dans Painting and General Contracting LLC | Boston, MA',
   description: 'Your trusted partner for residential and commercial contracting services in Boston, Massachusetts.',
 };
 

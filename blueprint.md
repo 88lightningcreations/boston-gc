@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a website for a general contracting company in Boston, MA. The website showcases the company's services, provides answers to frequently asked questions, and offers a clear call to action for potential customers. The design is modern, clean, and professional, with a focus on user experience and accessibility.
+This project is a website for Dans Painting and General Contracting LLC in Boston, MA. The website showcases the company's services, provides answers to frequently asked questions, and offers a clear call to action for potential customers. The design is modern, clean, and professional, with a focus on user experience and accessibility.
 
 ## Implemented Features and Design
 
@@ -13,20 +13,29 @@ This project is a website for a general contracting company in Boston, MA. The w
 
 ### Components
 - **Header:** A sticky header with a transparent background that becomes opaque on scroll. It includes the company logo and navigation links.
-- **Hero Section:** A full-screen hero section with the company logo and a clear call to action.
+- **Hero Section:** A full-screen hero section with the company logo.
 - **Services Section:** A section showcasing the company's services with icons and brief descriptions.
 - **FAQ Section:** A frequently asked questions section with accordion-style answers.
 - **Carousel:** A carousel of images showcasing the company's work.
-- **Call to Action (CTA) Section:** A section with a clear call to action and a contact form.
-- **Footer:** A footer with the company's contact information and social media links.
+- **Call to Action (CTA) Section:** A section with a clear call to action and a button linking to the company's Google Maps page.
+- **Footer:** A footer with links to legal pages (Terms of Service, Privacy Policy, Disclaimer) and navigation links. It also displays the copyright information with the current year and company name.
+- **Legal Pages:** Separate pages for Terms of Service, Privacy Policy, and Disclaimer with dynamically generated "Last Updated" dates.
 
 ### Styling
 - **Bootstrap:** The project uses Bootstrap for its grid system and base styling.
 - **Custom CSS:** Custom CSS is used for additional styling and to override Bootstrap's default styles.
 - **Color Palette:** The color palette is modern and professional, with a mix of dark and light colors.
-- **Typography:** The typography is clean and easy to read, with a mix of serif and sans-serif fonts.
+- **Typography:** The typography is clean and easy to read.
 
-## Current Plan
+## Current Change: Update Company Name
 
-- **Fix Carousel Image Sizing:** The images in the carousel are zoomed in too far. The `object-fit` property will be changed from `cover` to `contain` to ensure the entire image is visible.
-- **Update Next/Image Component:** The `next/image` component will be updated to use the latest properties, including `fill`, `sizes`, and `style={{objectFit: "contain"}}`.
+### Plan
+- **Goal:** Ensure the company name "Dans Painting and General Contracting LLC" is consistent across the entire website.
+- **Actions:**
+    1.  Update the company name in the `Terms of Service` page (`app/terms-of-service/page.tsx`).
+    2.  Update the company name in the `Privacy Policy` page (`app/privacy-policy/page.tsx`).
+    3.  Update the company name in the `Disclaimer` page (`app/disclaimer/page.tsx`).
+    4.  Update the company name in the site metadata (`app/layout.tsx`).
+    5.  Update the copyright notice in the `Footer` component (`app/components/Footer.tsx`).
+    6.  Verify that all instances of the old company name have been replaced.
+    7.  Added more navigation links to the footer for better user experience.
