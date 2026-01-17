@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
-import Header from './components/Header';
+import Nav from './components/Nav';
 import Footer from './components/Footer';
 
 export const metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ paddingTop: '56px' }}>
-        <Header />
+        <Nav />
         <main>
           {children}
         </main>

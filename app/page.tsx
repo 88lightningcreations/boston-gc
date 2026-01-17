@@ -3,6 +3,7 @@ import Cta from './components/Cta';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Carousel from './components/Carousel';
+import About from './components/About';
 
 export default function HomePage() {
   const images = [
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <div>
       <Hero />
+      <About />
       <Services />
       <Faq />
       <Carousel images={images} />
