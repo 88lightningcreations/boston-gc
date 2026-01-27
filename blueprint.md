@@ -1,3 +1,4 @@
+
 # Project Blueprint
 
 ## Overview
@@ -27,15 +28,11 @@ This project is a website for Dans Painting and General Contracting LLC in Bosto
 - **Color Palette:** The color palette is modern and professional, with a mix of dark and light colors.
 - **Typography:** The typography is clean and easy to read.
 
-## Current Change: Update Company Name
+## Current Change: Interactive Image Comparison
 
 ### Plan
-- **Goal:** Ensure the company name "Dans Painting and General Contracting LLC" is consistent across the entire website.
+- **Goal:** Add an interactive "before and after" image comparison feature to the carousel.
 - **Actions:**
-    1.  Update the company name in the `Terms of Service` page (`app/terms-of-service/page.tsx`).
-    2.  Update the company name in the `Privacy Policy` page (`app/privacy-policy/page.tsx`).
-    3.  Update the company name in the `Disclaimer` page (`app/disclaimer/page.tsx`).
-    4.  Update the company name in the site metadata (`app/layout.tsx`).
-    5.  Update the copyright notice in the `Footer` component (`app/components/Footer.tsx`).
-    6.  Verify that all instances of the old company name have been replaced.
-    7.  Added more navigation links to the footer for better user experience.
+    1. Create a new `ImageComparison.tsx` component with an interactive slider.
+    2. Update the `Carousel.tsx` component to use the new `ImageComparison.tsx` component for "before and after" images.
+    3. Modify the `images` array in `app/page.tsx` to use a new data structure that supports single images and "before and after" comparisons.
