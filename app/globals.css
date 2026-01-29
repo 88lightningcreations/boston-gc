@@ -64,6 +64,7 @@ a {
   overflow: hidden;
   cursor: col-resize;
   border-radius: 0.5rem;
+  user-select: none;
 }
 
 .before-image,
