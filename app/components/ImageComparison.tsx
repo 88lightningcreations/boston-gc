@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 interface ImageComparisonProps {
@@ -14,39 +14,34 @@ const ImageComparison: React.FC<ImageComparisonProps> = ({ before, after, alt })
   const [sliderPosition, setSliderPosition] = useState(50);
   const imageContainer = useRef<HTMLDivElement>(null);
 
-  const handleResize = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
-    if (!isResizing || !imageContainer.current) return;
-
+  const handleResize = useCallback((e: MouseEvent | TouchEvent) => {
+    if (!imageContainer.current) return;
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     const rect = imageContainer.current.getBoundingClientRect();
     const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
     const percent = (x / rect.width) * 100;
-
     setSliderPosition(percent);
-  };
+  }, []);
 
-  const handleResizeEnd = () => {
+  const handleResizeEnd = useCallback(() => {
     setIsResizing(false);
-  };
+  }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => handleResize(e as any);
-    const handleTouchMove = (e: TouchEvent) => handleResize(e as any);
-
     if (isResizing) {
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('touchmove', handleTouchMove);
+      window.addEventListener('mousemove', handleResize);
+      window.addEventListener('touchmove', handleResize);
       window.addEventListener('mouseup', handleResizeEnd);
       window.addEventListener('touchend', handleResizeEnd);
     }
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('mousemove', handleResize);
+      window.removeEventListener('touchmove', handleResize);
       window.removeEventListener('mouseup', handleResizeEnd);
       window.removeEventListener('touchend', handleResizeEnd);
     };
-  }, [isResizing, handleResize]);
+  }, [isResizing, handleResize, handleResizeEnd]);
 
 
   return (

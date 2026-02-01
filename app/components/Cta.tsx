@@ -1,8 +1,5 @@
-
-import Link from 'next/link';
-
 const Cta = () => {
-  const gmbLink = "https://www.google.com/maps/place/Dans+Painting+%26+General+Contracting+LLC/@42.4543633,-71.7678142,157057m/data=!3m2!1e3!4b1!4m6!3m5!1s0x67f5386030fd2fa9:0xbb9e23ce85130ee5!8m2!3d42.456253!4d-71.1084279!16s%2Fg%2F11sx19hqyr?entry=ttu&g_ep=EgoyMDI2MDEwNC4wIKXMDSoASAFQAw%3D%3D";
+  const gmbLink = "https://share.google/XyJXAd4BFOcL6hRoK";
 
   return (
     <div className="container my-5">

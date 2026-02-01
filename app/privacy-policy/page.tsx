@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
             <p className="text-muted">Last Updated: {new Date().toLocaleDateString()}</p>
 
             <h2 className="mt-5">1. Introduction</h2>
-            <p>This Privacy Policy describes how Dans Painting and General Contracting LLC ("we," "us," or "our") collects, uses, and discloses your personal information when you use our website. We are committed to protecting your privacy and complying with applicable data protection laws.</p>
+            <p>This Privacy Policy describes how Dans Painting and General Contracting LLC (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, and discloses your personal information when you use our website. We are committed to protecting your privacy and complying with applicable data protection laws.</p>
 
             <h2 className="mt-4">2. Information We Collect</h2>
             <p>We may collect several types of information from and about users of our website, including:</p>

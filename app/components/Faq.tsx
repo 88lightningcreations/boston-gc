@@ -23,6 +23,30 @@ const faqData = {
       },
     },
     {
+        "@type": "Question",
+        name: "What materials do you use for staircases and railings?",
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: "We work with a variety of materials to suit your style and budget, including wood, metal, and glass. We can help you choose the best option for your home and create a custom design that is both beautiful and functional."
+        }
+    },
+    {
+        "@type": "Question",
+        name: "How long does it take to build a sunroom or addition?",
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: "The timeline for a sunroom or addition can vary depending on the size and complexity of the project. We will provide you with a detailed timeline before we begin construction, but a typical project can take anywhere from 4 to 12 weeks from start to finish."
+        }
+    },
+    {
+        "@type": "Question",
+        name: "What are the benefits of new siding?",
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: "New siding can dramatically improve the curb appeal and value of your home. It can also improve energy efficiency and protect your home from the elements. We offer a variety of siding options to choose from, including vinyl, wood, and fiber cement."
+        }
+    },
+    {
       "@type": "Question",
       name: "How can I prepare my home for a Boston winter?",
       acceptedAnswer: {

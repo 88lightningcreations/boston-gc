@@ -112,3 +112,43 @@ a {
   justify-content: center;
   color: black;
 }
+
+#content-container {
+  position: relative;
+  z-index: 1;
+}
+
+#content-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: transparent; /* Or a very light, almost transparent color */
+  background-image: var(--slogan-image-1);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0;
+  animation: slogan-fade-in-out 30s infinite;
+}
+
+@keyframes slogan-fade-in-out {
+  0% { opacity: 0; background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100"><text x="50%" y="50%" dy=".3em" font-family="Arial" font-size="20" fill="%23ccc" text-anchor="middle">Your project, our passion: Quality work with a personal touch</text></svg>'); }
+  10% { opacity: 0.05; }
+  20% { opacity: 0; }
+  20.01% { background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100"><text x="50%" y="50%" dy=".3em" font-family="Arial" font-size="20" fill="%23ccc" text-anchor="middle">Exceptional quality, unrivaled service: Transforming your space</text></svg>'); }
+  30% { opacity: 0.05; }
+  40% { opacity: 0; }
+  40.01% { background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100"><text x="50%" y="50%" dy=".3em" font-family="Arial" font-size="20" fill="%23ccc" text-anchor="middle">Building dreams with quality work and heartfelt service</text></svg>'); }
+  50% { opacity: 0.05; }
+  60% { opacity: 0; }
+  60.01% { background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100"><text x="50%" y="50%" dy=".3em" font-family="Arial" font-size="20" fill="%23ccc" text-anchor="middle">Where quality shines and customers matter most</text></svg>'); }
+  70% { opacity: 0.05; }
+  80% { opacity: 0; }
+  80.01% { background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100"><text x="50%" y="50%" dy=".3em" font-family="Arial" font-size="20" fill="%23ccc" text-anchor="middle">Precision in every stroke, service beyond compare!</text></svg>'); }
+  90% { opacity: 0.05; }
+  100% { opacity: 0; }
+}

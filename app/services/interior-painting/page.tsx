@@ -18,7 +18,7 @@ export default function InteriorPaintingPage() {
         <div className="px-4 py-5 my-5 text-center">
           <h1 className="display-5 fw-bold">Interior & Exterior Painting</h1>
           <div className="col-lg-8 mx-auto">
-            <p className="lead mb-4">A fresh coat of paint is one of the most effective and affordable ways to transform your home. Whether you're looking to update a single room or repaint the entire exterior of your house, our team of professional painters has the expertise to deliver a flawless finish.</p>
+            <p className="lead mb-4">A fresh coat of paint is one of the most effective and affordable ways to transform your home. Whether you&apos;re looking to update a single room or repaint the entire exterior of your house, our team of professional painters has the expertise to deliver a flawless finish.</p>
             <h2>Our Painting Services Include:</h2>
             <ul>
               <li>Color consultation</li>
@@ -29,7 +29,7 @@ export default function InteriorPaintingPage() {
               <li>Exterior power washing and painting</li>
               <li>Deck and fence staining</li>
             </ul>
-            <p>We use only high-quality paints and materials to ensure a long-lasting and durable finish that you'll love for years to come. We take great care to protect your furniture and flooring and always leave your home clean and tidy.</p>
+            <p>We use only high-quality paints and materials to ensure a long-lasting and durable finish that you&apos;ll love for years to come. We take great care to protect your furniture and flooring and always leave your home clean and tidy.</p>
           </div>
         </div>
       </main>

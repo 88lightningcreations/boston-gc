@@ -17,10 +17,11 @@ export default function RootLayout({
     <html lang="en">
       <body style={{ paddingTop: '56px' }}>
         <Nav />
-        <main>
+        <main id="content-container">
           {children}
         </main>
         <Footer />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       </body>
     </html>
   );

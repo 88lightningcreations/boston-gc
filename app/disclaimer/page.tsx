@@ -7,7 +7,7 @@ const Disclaimer = () => {
             <h1 className="mb-4">Disclaimer</h1>
             <p className="text-muted">Last Updated: {new Date().toLocaleDateString()}</p>
 
-            <p className="mt-4">The information provided by Dans Painting and General Contracting LLC ("we," "us," or "our") on our website is for general informational purposes only. All information on the site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site.</p>
+            <p className="mt-4">The information provided by Dans Painting and General Contracting LLC (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) on our website is for general informational purposes only. All information on the site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site.</p>
 
             <h2 className="mt-4">Professional Disclaimer</h2>
             <p>The website cannot and does not contain professional contracting advice. The contracting information is provided for general informational and educational purposes only and is not a substitute for professional advice. Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals. We do not provide any kind of contracting advice. THE USE OR RELIANCE OF ANY INFORMATION CONTAINED ON THIS SITE IS SOLELY AT YOUR OWN RISK.</p>
