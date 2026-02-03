@@ -7,7 +7,7 @@ const Services = () => {
         {
             title: "Interior & Exterior Painting",
             description: "Transform your home with a fresh coat of paint. We handle everything from single rooms to full exteriors.",
-            link: "/services/interior-painting",
+            link: "/services/interior-exterior-painting",
             image: "/exterior_painting_boston_massachusetts.png"
         },
         {

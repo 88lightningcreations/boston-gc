@@ -1,47 +1,55 @@
-import Link from "next/link";
 
-export default function KitchenRemodelingPage() {
-  return (
-    <div className="container">
-      <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <Link href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <span className="fs-4">General Contracting</span>
-        </Link>
-        <ul className="nav nav-pills">
-          <li className="nav-item"><Link href="/" className="nav-link">Home</Link></li>
-          <li className="nav-item"><Link href="/#services" className="nav-link active" aria-current="page">Services</Link></li>
-          <li className="nav-item"><Link href="/blog" className="nav-link">Blog</Link></li>
-          <li className="nav-item"><Link href="#" className="nav-link">Contact</Link></li>
-        </ul>
-      </header>
-      <main>
-        <div className="px-4 py-5 my-5 text-center">
-          <h1 className="display-5 fw-bold">Kitchen Remodeling</h1>
-          <div className="col-lg-8 mx-auto">
-            <p className="lead mb-4">The kitchen is the heart of the home, and we specialize in creating beautiful, functional kitchens that fit your lifestyle and budget. Whether you&apos;re looking for a complete overhaul or a few simple updates, our team can bring your vision to life.</p>
-            <h2>Our Kitchen Remodeling Services Include:</h2>
-            <ul>
-              <li>Custom cabinet installation and refacing</li>
-              <li>Countertop installation (granite, quartz, marble, etc.)</li>
-              <li>Backsplash design and installation</li>
-              <li>Appliance installation</li>
-              <li>Lighting design and installation</li>
-              <li>Flooring installation</li>
-              <li>Island and peninsula construction</li>
-            </ul>
-            <p>We manage the entire process, from initial design and layout, to the final touches. Our goal is to create a kitchen that is not only stunning but also highly functional, with smart storage solutions and a workflow that makes cooking and entertaining a joy.</p>
-          </div>
+import React from 'react';
+import Image from 'next/image';
+
+const KitchenRemodelingPage = () => {
+    return (
+        <div className="container px-4 py-5">
+            <h1 className="display-5 fw-bold mb-4 text-center">Transform Your Kitchen with Our Remodeling Services</h1>
+            <p className="fs-5 text-secondary mb-5 text-center">
+                The kitchen is the heart of the home, and we specialize in creating beautiful, functional kitchens that fit your lifestyle and budget. Whether you're looking for a complete overhaul or a few simple updates, our team can bring your vision to life.
+            </p>
+            <div className="d-flex justify-content-center mb-5">
+                <Image
+                    src="/kitchen-reno-after-general-contractor-boston.jpeg"
+                    alt="A beautifully remodeled kitchen, showcasing the quality of our kitchen remodeling services in Boston."
+                    width={800}
+                    height={600}
+                    className="img-fluid rounded shadow"
+                />
+            </div>
+            <div className="row justify-content-center">
+                <div className="col-lg-8">
+                    <h2 className="display-6 fw-bold mb-4">Our Kitchen Remodeling Services</h2>
+                    <p className="text-secondary mb-4">
+                        We manage the entire process, from initial design and layout to the final touches. Our goal is to create a kitchen that is not only stunning but also highly functional, with smart storage solutions and a workflow that makes cooking and entertaining a joy.
+                    </p>
+                    <ul className="list-group list-group-flush mb-4">
+                        <li className="list-group-item bg-transparent border-secondary">
+                            <h3 className="fs-4 fw-bold">Custom Cabinet Installation & Refacing</h3>
+                            <p className="text-secondary">We offer a wide range of cabinet styles and finishes to create the perfect look for your kitchen.</p>
+                        </li>
+                        <li className="list-group-item bg-transparent border-secondary">
+                            <h3 className="fs-4 fw-bold">Countertop Installation</h3>
+                            <p className="text-secondary">Choose from a variety of materials, including granite, quartz, and marble, to create a durable and beautiful workspace.</p>
+                        </li>
+                        <li className="list-group-item bg-transparent border-secondary">
+                            <h3 className="fs-4 fw-bold">Backsplash & Appliance Installation</h3>
+                            <p className="text-secondary">We can help you select and install the perfect backsplash and appliances to complete your kitchen's new look.</p>
+                        </li>
+                        <li className="list-group-item bg-transparent border-secondary">
+                            <h3 className="fs-4 fw-bold">Lighting & Flooring</h3>
+                            <p className="text-secondary">The right lighting and flooring can make all the difference. We'll help you choose the best options for your space.</p>
+                        </li>
+                    </ul>
+                    <h2 className="display-6 fw-bold mb-4">Your Dream Kitchen Awaits</h2>
+                    <p className="text-secondary">
+                        As Boston's premier general contractor, we're dedicated to providing exceptional kitchen remodeling services. We'll work with you every step of the way to ensure your new kitchen is everything you've ever wanted.
+                    </p>
+                </div>
+            </div>
         </div>
-      </main>
-      <footer className="py-3 my-4">
-        <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-          <li className="nav-item"><Link href="/" className="nav-link px-2 text-muted">Home</Link></li>
-          <li className="nav-item"><Link href="/#services" className="nav-link px-2 text-muted">Services</Link></li>
-          <li className="nav-item"><Link href="/blog" className="nav-link px-2 text-muted">Blog</Link></li>
-          <li className="nav-item"><Link href="#" className="nav-link px-2 text-muted">Contact</Link></li>
-        </ul>
-        <p className="text-center text-muted">© 2023 General Contracting Company</p>
-      </footer>
-    </div>
-  );
-}
+    );
+};
+
+export default KitchenRemodelingPage;

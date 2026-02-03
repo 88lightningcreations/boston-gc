@@ -1,0 +1,65 @@
+/* The main container establishes its own aspect ratio and positioning context */
+.imageComparison {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: col-resize;
+  --position: 50%;
+}
+
+.afterImage, .beforeImageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Prevent image selection and dragging which interferes with the slider */
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.afterImage > :global(img),
+.beforeImageWrapper > :global(img) {
+  pointer-events: none;
+}
+
+.afterImage { z-index: 1; }
+.beforeImageWrapper { 
+  z-index: 2;
+  clip-path: inset(0 calc(100% - var(--position)) 0 0);
+}
+
+/* The .slider div is now the line itself */
+.slider {
+  position: absolute;
+  top: 0;
+  left: var(--position);
+  transform: translateX(-50%);
+  width: 3px; /* The line has width */
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+/* The icon is a child of the slider, positioned in its center */
+.sliderIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #333;
+  pointer-events: all; /* Make sure we can interact with the icon */
+  cursor: col-resize;
+}

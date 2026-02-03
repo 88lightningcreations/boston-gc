@@ -1,27 +1,29 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './globals.css';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
 
-export const metadata = {
-  title: 'Dans Painting and General Contracting LLC | Boston, MA',
-  description: 'Your trusted partner for residential and commercial contracting services in Boston, Massachusetts.',
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "G General Construction",
+  description: "Boston's most trusted general contractor for home renovations, kitchen and bathroom remodeling, and more.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en">
-      <body style={{ paddingTop: '56px' }}>
-        <Nav />
-        <main id="content-container">
-          {children}
-        </main>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className={inter.className}>
+        <Header />
+        {children}
         <Footer />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       </body>
     </html>
   );

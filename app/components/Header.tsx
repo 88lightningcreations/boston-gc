@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-const Nav = () => {
+const Header = () => {
   return (
     <header className="navbar navbar-light bg-white fixed-top border-bottom">
       <div className="container d-flex justify-content-between align-items-center">
@@ -15,4 +15,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Header;

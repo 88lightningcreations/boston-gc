@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import styles from './ImageComparison.module.css';
+import FillImage from './FillImage';
 
 interface ImageComparisonProps {
   before: string;
@@ -11,87 +12,89 @@ interface ImageComparisonProps {
 
 const ImageComparison: React.FC<ImageComparisonProps> = ({ before, after, alt }) => {
   const [isResizing, setIsResizing] = useState(false);
-  const [sliderPosition, setSliderPosition] = useState(50);
-  const imageContainer = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const startX = useRef(0);
+  const startPct = useRef(50);
 
-  const handleResize = useCallback((e: MouseEvent | TouchEvent) => {
-    if (!imageContainer.current) return;
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const rect = imageContainer.current.getBoundingClientRect();
-    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-    const percent = (x / rect.width) * 100;
-    setSliderPosition(percent);
-  }, []);
-
-  const handleResizeEnd = useCallback(() => {
-    setIsResizing(false);
-  }, []);
-
+  // Set the initial position of the slider to 50%
   useEffect(() => {
-    if (isResizing) {
-      window.addEventListener('mousemove', handleResize);
-      window.addEventListener('touchmove', handleResize);
-      window.addEventListener('mouseup', handleResizeEnd);
-      window.addEventListener('touchend', handleResizeEnd);
+    if (containerRef.current) {
+      containerRef.current.style.setProperty('--position', '50%');
     }
+  }, []);
+
+  // This function is called when a drag starts
+  const handleMouseDown = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+    if (!containerRef.current) return;
+
+    e.stopPropagation();
+    setIsResizing(true);
+    document.body.classList.add('grabbing-cursor');
+
+    // Record the starting X position and the slider's starting percentage
+    startX.current = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const currentPosition = containerRef.current.style.getPropertyValue('--position');
+    startPct.current = parseFloat(currentPosition);
+  }, []);
+
+  // This function is called whenever the mouse moves during a drag
+  const handleResize = useCallback((e: MouseEvent | TouchEvent) => {
+    if (!containerRef.current || !isResizing) return;
+
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const deltaX = clientX - startX.current;
+    const rect = containerRef.current.getBoundingClientRect();
+
+    // Calculate the movement as a percentage of the container's width
+    const deltaPct = (deltaX / rect.width) * 100;
+    
+    // Calculate the new position and clamp it between 0 and 100
+    const newPct = Math.max(0, Math.min(100, startPct.current + deltaPct));
+
+    containerRef.current.style.setProperty('--position', `${newPct}%`);
+  }, [isResizing]);
+
+  // This function is called when a drag ends
+  const handleMouseUp = useCallback(() => {
+    setIsResizing(false);
+    document.body.classList.remove('grabbing-cursor');
+  }, []);
+
+  // Add and remove the global event listeners for dragging
+  useEffect(() => {
+    window.addEventListener('mousemove', handleResize);
+    window.addEventListener('touchmove', handleResize);
+    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('touchend', handleMouseUp);
 
     return () => {
       window.removeEventListener('mousemove', handleResize);
       window.removeEventListener('touchmove', handleResize);
-      window.removeEventListener('mouseup', handleResizeEnd);
-      window.removeEventListener('touchend', handleResizeEnd);
+      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('touchend', handleMouseUp);
     };
-  }, [isResizing, handleResize, handleResizeEnd]);
-
+  }, [handleResize, handleMouseUp]);
 
   return (
     <div
-      ref={imageContainer}
-      className="image-comparison"
-      onMouseDown={() => setIsResizing(true)}
-      onTouchStart={() => setIsResizing(true)}
+      ref={containerRef}
+      className={styles.imageComparison}
+      // We only need to initiate the drag from the slider itself
     >
-      <Image
-        src={after}
-        alt={alt}
-        width={800}
-        height={600}
-        className="after-image"
-      />
-      <div
-        className="before-image"
-        style={{
-          clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
-        }}
-      >
-        <Image
-          src={before}
-          alt={alt}
-          width={800}
-          height={600}
-        />
+      <FillImage src={after} alt={alt} className={styles.afterImage} />
+      <div className={styles.beforeImageWrapper}>
+        <FillImage src={before} alt={alt} />
       </div>
-      <div
-        className="slider"
-        style={{ left: `${sliderPosition}%` }}
+      <div 
+        className={styles.slider}
+        onMouseDown={handleMouseDown}
+        onTouchStart={handleMouseDown}
       >
-        <div className="slider-line"></div>
-        <div className="slider-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M8 9l4-4 4 4m0 6l-4 4-4-4"
-            />
+        <div className={styles.sliderIcon}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 17l-5-5 5-5m2 10l5-5-5-5" />
           </svg>
         </div>
-        <div className="slider-line"></div>
       </div>
     </div>
   );

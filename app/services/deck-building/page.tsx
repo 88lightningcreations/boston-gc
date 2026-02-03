@@ -1,37 +1,69 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Cta from '@/app/components/Cta';
 
 const DeckBuildingPage = () => {
     return (
-        <div className="bg-gray-900 text-white">
-            <div className="container mx-auto px-4 py-12">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-                    <div className="lg:w-1/2">
-                        <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-cyan-400">Deck Building</h1>
-                        <p className="text-lg text-gray-400 mb-6">
-                            Enjoy the outdoors with a beautiful, custom-built deck. We handle everything from design and construction to finishing touches, creating the perfect space for you to relax and entertain.
-                        </p>
-                        <ul className="list-disc list-inside text-gray-400 space-y-2">
-                            <li>Custom deck design to fit your home and lifestyle</li>
-                            <li>High-quality materials for a long-lasting deck</li>
-                            <li>Professional construction and installation</li>
-                            <li>Finishing options including railings, stairs, and lighting</li>
-                        </ul>
+        <div className="container px-4 py-5">
+            <h1 className="display-5 fw-bold mb-4 text-center">Custom Deck Building in Boston</h1>
+            <p className="fs-5 text-secondary mb-5 text-center">
+                Enjoy the outdoors and enhance your home's living space with a beautiful, custom-built deck. We handle everything from design to construction, creating the perfect outdoor oasis for you.
+            </p>
+            <div className="d-flex justify-content-center mb-5">
+                <Image
+                    src="/deck-after-general-contractor-boston.jpeg"
+                    alt="A newly built custom deck in Boston, showcasing our expert deck building services."
+                    width={800}
+                    height={600}
+                    className="img-fluid rounded shadow"
+                />
+            </div>
+            <div className="row justify-content-center">
+                <div className="col-lg-8">
+                    <h2 className="display-6 fw-bold mb-4">Our Deck Building Services</h2>
+                    <p className="text-secondary mb-4">
+                        We specialize in creating custom decks tailored to your home's architecture and your personal lifestyle, ensuring a seamless process from concept to completion.
+                    </p>
+                    <div className="row">
+                        <div className="col-md-6 mb-4">
+                            <div className="card bg-secondary text-light h-100">
+                                <div className="card-body">
+                                    <h3 className="card-title fs-4 fw-bold">Custom Deck Design</h3>
+                                    <p className="card-text">Our design team works with you to create a deck that complements your home and meets your specific needs for a functional and beautiful outdoor living space.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6 mb-4">
+                            <div className="card bg-secondary text-light h-100">
+                                <div className="card-body">
+                                    <h3 className="card-title fs-4 fw-bold">High-Quality Materials</h3>
+                                    <p className="card-text">We use only the highest quality materials, including pressure-treated wood and composite decking, to ensure your deck is durable and low-maintenance.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6 mb-4">
+                            <div className="card bg-secondary text-light h-100">
+                                <div className="card-body">
+                                    <h3 className="card-title fs-4 fw-bold">Professional Construction</h3>
+                                    <p className="card-text">Our experienced builders adhere to the highest standards of craftsmanship and safety, ensuring a structurally sound and beautiful finished product.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6 mb-4">
+                            <div className="card bg-secondary text-light h-100">
+                                <div className="card-body">
+                                    <h3 className="card-title fs-4 fw-bold">Finishing Touches</h3>
+                                    <p className="card-text">We offer a variety of finishing options, including custom railings, built-in seating, and lighting, to create a truly unique outdoor space.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="lg:w-1/2">
-                        <Image
-                            src="/deck-after-general-contractor-boston.jpeg"
-                            alt="Custom deck"
-                            width={600}
-                            height={400}
-                            className="rounded-lg shadow-lg"
-                        />
-                    </div>
+                    <h2 className="display-6 fw-bold mt-5 mb-4">Your Partner for a Perfect Deck</h2>
+                    <p className="text-secondary">
+                        At Dan's Painting and General Contracting, we are dedicated to providing our clients with exceptional service and superior results. We are Boston’s trusted experts in custom deck building, committed to creating an outdoor space you will enjoy for years to come.
+                    </p>
                 </div>
             </div>
-            <Cta />
         </div>
     );
 };

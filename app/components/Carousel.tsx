@@ -1,7 +1,8 @@
 'use client';
-import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import ImageComparison from './ImageComparison';
+import FillImage from './FillImage';
+import Carousel from 'bootstrap/js/dist/carousel';
 
 interface SingleImage {
   type: 'single';
@@ -22,16 +23,37 @@ interface CarouselProps {
   images: CarouselImage[];
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images }) => {
+const CarouselComponent: React.FC<CarouselProps> = ({ images }) => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const carouselInstanceRef = useRef<Carousel | null>(null);
+
   useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
+    const carouselElement = carouselRef.current;
+    if (!carouselElement) return;
+
+    // Initialize the Bootstrap carousel instance using the direct import
+    const carouselInstance = new Carousel(carouselElement, {
+      interval: 5000,
+      ride: 'carousel'
+    });
+    carouselInstanceRef.current = carouselInstance;
+
+    // Start the carousel rotation
+    carouselInstance.cycle();
+
+    // Cleanup function to dispose of the carousel instance
+    return () => {
+      if (carouselInstanceRef.current) {
+        carouselInstanceRef.current.dispose();
+      }
+    };
+  }, []); // Empty dependency array ensures this runs only once
 
   return (
     <div
+      ref={carouselRef}
       id="imageCarousel"
       className="carousel slide"
-      data-bs-ride="carousel"
       style={{ maxWidth: '1000px', margin: '50px auto' }}
     >
       <div className="carousel-indicators">
@@ -58,14 +80,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             style={{ height: '100%' }}
           >
             {image.type === 'single' ? (
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: 'contain' }}
-                className="d-block w-100"
-              />
+              <FillImage src={image.src} alt={image.alt} />
             ) : (
               <ImageComparison
                 before={image.before}
@@ -82,10 +97,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         data-bs-target="#imageCarousel"
         data-bs-slide="prev"
       >
-        <span
-          className="carousel-control-prev-icon"
-          aria-hidden="true"
-        ></span>
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Previous</span>
       </button>
       <button
@@ -94,14 +106,11 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         data-bs-target="#imageCarousel"
         data-bs-slide="next"
       >
-        <span
-          className="carousel-control-next-icon"
-          aria-hidden="true"
-        ></span>
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
     </div>
   );
 };
 
-export default Carousel;
+export default CarouselComponent;
