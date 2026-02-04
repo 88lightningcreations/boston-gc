@@ -1,6 +1,13 @@
-import { getPost } from '../../../lib/posts';
+import { getPost, getPosts } from '../../../lib/posts';
 import Image from 'next/image';
 import Link from 'next/link';
+
+export async function generateStaticParams() {
+  const posts = getPosts();
+  return posts.map(post => ({
+    slug: post.slug,
+  }));
+}
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = getPost(params.slug);
