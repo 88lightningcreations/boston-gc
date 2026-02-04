@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import ImageComparison from '@/app/components/ImageComparison';
 import FillImage from '@/app/components/FillImage';
 import type { Metadata } from 'next';
@@ -15,14 +14,14 @@ const StaircasesRailingsPage = () => {
     <div className="container-fluid" style={{ backgroundColor: '#f8f9fa' }}>
       <header className="text-center py-5">
         <h1 className="display-4">Staircases & Railings</h1>
-        <p className="lead">Elevate your home's design with custom-built staircases and railings.</p>
+        <p className="lead">Elevate your home&apos;s design with custom-built staircases and railings.</p>
       </header>
 
       <main className="container">
         <section className="py-5">
           <h2 className="text-center mb-4">From Functional to Feature</h2>
           <p className="text-center mx-auto" style={{ maxWidth: '800px' }}>
-            A staircase is more than just a way to get from one floor to another—it's a central architectural feature of your home. We design and build beautiful, sturdy staircases and railing systems that enhance your home's safety and style.
+            A staircase is more than just a way to get from one floor to another—it&apos;s a central architectural feature of your home. We design and build beautiful, sturdy staircases and railing systems that enhance your home&apos;s safety and style.
           </p>
         </section>
 

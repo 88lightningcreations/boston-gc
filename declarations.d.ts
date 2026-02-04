@@ -1,1 +1,5 @@
-declare module 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { Carousel } from 'bootstrap';
+
+declare module 'bootstrap/js/dist/carousel' {
+  export default Carousel;
+}

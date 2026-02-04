@@ -1,12 +1,11 @@
 import React from 'react';
-import Image from 'next/image';
 import ImageComparison from '@/app/components/ImageComparison';
 import FillImage from '@/app/components/FillImage';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: "Expert Siding Services in Boston, MA | D&D General Contracting",
-    description: "Transform your home\'s exterior with our top-quality siding installation and repair services in Boston. We specialize in vinyl, fiber cement, and wood siding.",
+    description: "Transform your home's exterior with our top-quality siding installation and repair services in Boston. We specialize in vinyl, fiber cement, and wood siding.",
     keywords: "siding contractor Boston, siding installation, vinyl siding, fiber cement siding, wood siding, siding repair, Boston general contractor",
 };
 
@@ -31,10 +30,10 @@ const SidingPage = () => {
             <div className="col-md-6 d-flex flex-column justify-content-center">
               <h2>Quality Siding, Expertly Installed</h2>
               <p>
-                Your home\'s siding is its first line of defense against the elements and a key component of its curb appeal. At D&D General Contracting, we provide durable, high-quality siding options that not only protect your home but also enhance its beauty and value.
+                Your home&apos;s siding is its first line of defense against the elements and a key component of its curb appeal. At D&D General Contracting, we provide durable, high-quality siding options that not only protect your home but also enhance its beauty and value.
               </p>
               <p>
-                Whether you\'re looking for the low-maintenance appeal of vinyl, the durability of fiber cement, or the classic look of wood, our team has the expertise to deliver a flawless installation.
+                Whether you&apos;re looking for the low-maintenance appeal of vinyl, the durability of fiber cement, or the classic look of wood, our team has the expertise to deliver a flawless installation.
               </p>
             </div>
           </div>

@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import ImageComparison from './ImageComparison';
 import FillImage from './FillImage';
+import type { Carousel } from 'bootstrap';
 
 interface SingleImage {
   type: 'single';
@@ -24,7 +25,7 @@ interface CarouselProps {
 
 const CarouselComponent: React.FC<CarouselProps> = ({ images }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const carouselInstanceRef = useRef<any | null>(null);
+  const carouselInstanceRef = useRef<Carousel | null>(null);
 
   useEffect(() => {
     const carouselElement = carouselRef.current;

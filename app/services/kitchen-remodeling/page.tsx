@@ -7,7 +7,7 @@ const KitchenRemodelingPage = () => {
         <div className="container px-4 py-5">
             <h1 className="display-5 fw-bold mb-4 text-center">Transform Your Kitchen with Our Remodeling Services</h1>
             <p className="fs-5 text-secondary mb-5 text-center">
-                The kitchen is the heart of the home, and we specialize in creating beautiful, functional kitchens that fit your lifestyle and budget. Whether you're looking for a complete overhaul or a few simple updates, our team can bring your vision to life.
+                The kitchen is the heart of the home, and we specialize in creating beautiful, functional kitchens that fit your lifestyle and budget. Whether you&apos;re looking for a complete overhaul or a few simple updates, our team can bring your vision to life.
             </p>
             <div className="d-flex justify-content-center mb-5">
                 <Image
@@ -35,16 +35,16 @@ const KitchenRemodelingPage = () => {
                         </li>
                         <li className="list-group-item bg-transparent border-secondary">
                             <h3 className="fs-4 fw-bold">Backsplash & Appliance Installation</h3>
-                            <p className="text-secondary">We can help you select and install the perfect backsplash and appliances to complete your kitchen's new look.</p>
+                            <p className="text-secondary">We can help you select and install the perfect backsplash and appliances to complete your kitchen&apos;s new look.</p>
                         </li>
                         <li className="list-group-item bg-transparent border-secondary">
                             <h3 className="fs-4 fw-bold">Lighting & Flooring</h3>
-                            <p className="text-secondary">The right lighting and flooring can make all the difference. We'll help you choose the best options for your space.</p>
+                            <p className="text-secondary">The right lighting and flooring can make all the difference. We&apos;ll help you choose the best options for your space.</p>
                         </li>
                     </ul>
                     <h2 className="display-6 fw-bold mb-4">Your Dream Kitchen Awaits</h2>
                     <p className="text-secondary">
-                        As Boston's premier general contractor, we're dedicated to providing exceptional kitchen remodeling services. We'll work with you every step of the way to ensure your new kitchen is everything you've ever wanted.
+                        As Boston&apos;s premier general contractor, we&apos;re dedicated to providing exceptional kitchen remodeling services. We&apos;ll work with you every step of the way to ensure your new kitchen is everything you&apos;ve ever wanted.
                     </p>
                 </div>
             </div>

@@ -7,7 +7,7 @@ const DeckBuildingPage = () => {
         <div className="container px-4 py-5">
             <h1 className="display-5 fw-bold mb-4 text-center">Custom Deck Building in Boston</h1>
             <p className="fs-5 text-secondary mb-5 text-center">
-                Enjoy the outdoors and enhance your home's living space with a beautiful, custom-built deck. We handle everything from design to construction, creating the perfect outdoor oasis for you.
+                Enjoy the outdoors and enhance your home&apos;s living space with a beautiful, custom-built deck. We handle everything from design to construction, creating the perfect outdoor oasis for you.
             </p>
             <div className="d-flex justify-content-center mb-5">
                 <Image
@@ -22,7 +22,7 @@ const DeckBuildingPage = () => {
                 <div className="col-lg-8">
                     <h2 className="display-6 fw-bold mb-4">Our Deck Building Services</h2>
                     <p className="text-secondary mb-4">
-                        We specialize in creating custom decks tailored to your home's architecture and your personal lifestyle, ensuring a seamless process from concept to completion.
+                        We specialize in creating custom decks tailored to your home&apos;s architecture and your personal lifestyle, ensuring a seamless process from concept to completion.
                     </p>
                     <div className="row">
                         <div className="col-md-6 mb-4">
@@ -60,7 +60,7 @@ const DeckBuildingPage = () => {
                     </div>
                     <h2 className="display-6 fw-bold mt-5 mb-4">Your Partner for a Perfect Deck</h2>
                     <p className="text-secondary">
-                        At Dan's Painting and General Contracting, we are dedicated to providing our clients with exceptional service and superior results. We are Boston’s trusted experts in custom deck building, committed to creating an outdoor space you will enjoy for years to come.
+                        At Dan&apos;s Painting and General Contracting, we are dedicated to providing our clients with exceptional service and superior results. We are Boston’s trusted experts in custom deck building, committed to creating an outdoor space you will enjoy for years to come.
                     </p>
                 </div>
             </div>

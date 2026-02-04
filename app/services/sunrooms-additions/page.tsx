@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import FillImage from '@/app/components/FillImage';
 import type { Metadata } from 'next';
 
@@ -30,10 +29,10 @@ const SunroomsAdditionsPage = () => {
             <div className="col-md-6 d-flex flex-column justify-content-center">
               <h2>Seamlessly Integrated Home Additions</h2>
               <p>
-                Need more room to grow? A home addition is a fantastic way to increase your living space without the hassle of moving. Whether you\'re dreaming of a spacious new family room, a second-story addition, or a multi-season sunroom, we can make it a reality.
+                Need more room to grow? A home addition is a fantastic way to increase your living space without the hassle of moving. Whether you&apos;re dreaming of a spacious new family room, a second-story addition, or a multi-season sunroom, we can make it a reality.
               </p>
               <p>
-                Our team at D&D General Contracting handles the entire process, from initial design and permitting to construction and finishing touches. We work closely with you to ensure your new space seamlessly blends with your home\'s existing architecture and style.
+                Our team at D&D General Contracting handles the entire process, from initial design and permitting to construction and finishing touches. We work closely with you to ensure your new space seamlessly blends with your home&apos;s existing architecture and style.
               </p>
             </div>
           </div>

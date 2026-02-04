@@ -7,7 +7,7 @@ const BasementFinishingPage = () => {
         <div className="container px-4 py-5">
             <h1 className="display-5 fw-bold mb-4 text-center">Transform Your Basement with Our Finishing Services</h1>
             <p className="fs-5 text-secondary mb-5 text-center">
-                Unlock the full potential of your home by transforming your unfinished basement into a beautiful, functional, and valuable living space. At Dan's Painting and General Contracting, we specialize in high-quality basement finishing services in the Boston area, tailored to your unique needs and vision.
+                Unlock the full potential of your home by transforming your unfinished basement into a beautiful, functional, and valuable living space. At Dan&apos;s Painting and General Contracting, we specialize in high-quality basement finishing services in the Boston area, tailored to your unique needs and vision.
             </p>
             <div className="d-flex justify-content-center mb-5">
                 <Image
@@ -23,7 +23,7 @@ const BasementFinishingPage = () => {
                 <div className="col-lg-8">
                     <h2 className="display-6 fw-bold mb-4">Why Invest in Basement Finishing?</h2>
                     <p className="text-secondary mb-4">
-                        A finished basement is more than just an extra room; it's a versatile space that can serve multiple purposes. Whether you dream of a home theater, a playroom for your kids, a home gym, a guest suite, or a functional home office, finishing your basement is a cost-effective way to increase your living area and enhance your property's value.
+                        A finished basement is more than just an extra room; it&apos;s a versatile space that can serve multiple purposes. Whether you dream of a home theater, a playroom for your kids, a home gym, a guest suite, or a functional home office, finishing your basement is a cost-effective way to increase your living area and enhance your property&apos;s value.
                     </p>
                     <h2 className="display-6 fw-bold mb-4">Our Comprehensive Basement Finishing Process</h2>
                     <p className="text-secondary mb-4">
@@ -49,7 +49,7 @@ const BasementFinishingPage = () => {
                     </ul>
                     <h2 className="display-6 fw-bold mb-4">Your Trusted Partner for Basement Finishing in Boston</h2>
                     <p className="text-secondary">
-                        With years of experience and a commitment to excellence, Dan's Painting and General Contracting is the premier choice for basement finishing in the Greater Boston area. We pride ourselves on our attention to detail, superior craftsmanship, and dedication to customer satisfaction.
+                        With years of experience and a commitment to excellence, Dan&apos;s Painting and General Contracting is the premier choice for basement finishing in the Greater Boston area. We pride ourselves on our attention to detail, superior craftsmanship, and dedication to customer satisfaction.
                     </p>
                 </div>
             </div>

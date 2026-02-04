@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import FillImage from '@/app/components/FillImage';
 import type { Metadata } from 'next';
 
@@ -30,7 +29,7 @@ const PaintingPage = () => {
             <div className="col-md-6 d-flex flex-column justify-content-center">
               <h2>A Finish That Lasts</h2>
               <p>
-                Whether you're looking to refresh your home's interior or protect its exterior, a professional paint job makes all the difference. Our skilled painters use high-quality materials and meticulous techniques to ensure a beautiful, long-lasting finish.
+                Whether you&apos;re looking to refresh your home&apos;s interior or protect its exterior, a professional paint job makes all the difference. Our skilled painters use high-quality materials and meticulous techniques to ensure a beautiful, long-lasting finish.
               </p>
               <p>
                 We handle everything from thorough preparation, including power washing and sanding, to the final coat and cleanup, ensuring a seamless and hassle-free experience.

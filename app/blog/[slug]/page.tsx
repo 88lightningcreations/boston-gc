@@ -1,13 +1,6 @@
-import { getPost, getPosts } from '../../../lib/posts';
+import { getPost } from '../../../lib/posts';
 import Image from 'next/image';
 import Link from 'next/link';
-
-export async function generateStaticParams() {
-  const posts = getPosts();
-  return posts.map(post => ({
-    slug: post.slug,
-  }));
-}
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = getPost(params.slug);
@@ -51,7 +44,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <li className="nav-item"><Link href="/" className="nav-link px-2 text-muted">Home</Link></li>
           <li className="nav-item"><Link href="/#services" className="nav-link px-2 text-muted">Services</Link></li>
           <li className="nav-item"><Link href="/blog" className="nav-link px-2 text-muted">Blog</Link></li>
-          <li className="nav-item"><Link href="#" className="nav-link px-2 text-muted">Contact</Link></li>
+          <li className-="nav-item"><Link href="#" className="nav-link px-2 text-muted">Contact</Link></li>
         </ul>
         <p className="text-center text-muted">© 2023 General Contracting Company</p>
       </footer>
