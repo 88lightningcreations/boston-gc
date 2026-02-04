@@ -2,7 +2,6 @@
 import { useEffect, useRef } from 'react';
 import ImageComparison from './ImageComparison';
 import FillImage from './FillImage';
-import Carousel from 'bootstrap/js/dist/carousel';
 
 interface SingleImage {
   type: 'single';
@@ -25,21 +24,22 @@ interface CarouselProps {
 
 const CarouselComponent: React.FC<CarouselProps> = ({ images }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const carouselInstanceRef = useRef<Carousel | null>(null);
+  const carouselInstanceRef = useRef<any | null>(null);
 
   useEffect(() => {
     const carouselElement = carouselRef.current;
     if (!carouselElement) return;
 
-    // Initialize the Bootstrap carousel instance using the direct import
-    const carouselInstance = new Carousel(carouselElement, {
-      interval: 5000,
-      ride: 'carousel'
+    // Dynamically import the Bootstrap Carousel module
+    import('bootstrap/js/dist/carousel').then(CarouselModule => {
+      const Carousel = CarouselModule.default;
+      const carouselInstance = new Carousel(carouselElement, {
+        interval: 5000,
+        ride: 'carousel'
+      });
+      carouselInstanceRef.current = carouselInstance;
+      carouselInstance.cycle();
     });
-    carouselInstanceRef.current = carouselInstance;
-
-    // Start the carousel rotation
-    carouselInstance.cycle();
 
     // Cleanup function to dispose of the carousel instance
     return () => {
